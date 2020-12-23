@@ -38,7 +38,7 @@ jobs:
           submodules: true
 
       - name: Check License
-        uses: apache/skywalking-eyes@main
+        uses: apache/skywalking-eyes@review
 
       - name: Check code generation
         run: make check-codegen
