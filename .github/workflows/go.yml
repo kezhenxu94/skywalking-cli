@@ -22,9 +22,6 @@ on:
     branches:
       - master
 
-env:
- GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
   build:
     name: Build
@@ -42,6 +39,8 @@ jobs:
 
       - name: Check License
         uses: apache/skywalking-eyes@review
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check code generation
         run: make check-codegen
